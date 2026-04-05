@@ -1,0 +1,35 @@
+body {
+    background-color: black;
+}
+
+.parallax {
+    height: 100vh; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 2em;
+}
+
+.black-block {
+    height: 150vh; 
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.t {
+    background-image: url("https://youth.europa.eu/sites/default/files/styles/1260w/public/2024-01/voting.png?itok=_2ZPY56m");
+}
+
+.b {
+    background-image: url("https://www.leftovercurrency.com/app/uploads/2019/07/500-thai-baht-banknote-vajiralongkorn-rama-x-obverse-1.jpg");
+}

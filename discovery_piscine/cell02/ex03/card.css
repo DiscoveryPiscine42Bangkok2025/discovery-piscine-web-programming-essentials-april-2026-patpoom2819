@@ -1,0 +1,48 @@
+.card {
+    border:1px solid white ;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+}
+
+.title {
+    color: gray;
+    font-size: 20px;
+}
+
+button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: black;
+    text-align: center;
+    cursor: pointer;
+    width: 100px;
+    font-size: 20px;
+
+}
+
+a {
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+}
+
+button:hover, a:hover {
+    opacity: 0.7;
+}
+
+.social-link a {
+    text-decoration: none;
+    font-size: 24px;
+    color: blue;
+    margin: 10px;
+}
+
+.social-links a:hover {
+    opacity:0.7;
+}
