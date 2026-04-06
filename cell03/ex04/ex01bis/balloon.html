@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+    <div id="balloon" style="border-radius: 100%; background-color: red; width: 200px; height: 200px;">
+
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        let cw = 200;
+        let ch = 200;
+        const dcw = 200;
+        const dch = 200;
+
+        const colors = ['red', 'green', 'blue'];
+        let colorIndex = 0;
+
+        $('#balloon').css('background-color', colors[colorIndex]);
+
+        $('#balloon').click(function () {
+            cw += 10;
+            ch += 10;
+
+            colorIndex = (colorIndex + 1) % colors.length;
+            $(this).css({
+                'background-color': colors[colorIndex],
+                'width': cw + 'px',
+                'height': ch + 'px'
+            });
+
+            if (ch > 420 || cw > 420) {
+                cw = dcw;
+                ch = dch;
+                colorIndex = 0;
+
+                $(this).css({
+                    'width': '0px',
+                    'height': '0px'
+                });
+
+                setTimeout(() => {
+                    $(this).css({
+                        'width': dcw + 'px',
+                        'height': dch + 'px',
+                        'background-color': colors[colorIndex]
+                    });
+                }, 2000);
+            }
+        });
+
+        $('#balloon').mouseleave(function () {
+            if (cw - 5 >= 200 && ch - 5 >= 200) {
+                cw -= 5;
+                ch -= 5;
+
+                colorIndex = (colorIndex - 1 + colors.length) % colors.length;
+
+                $(this).css({
+                    'height': ch + 'px',
+                    'width': cw + 'px',
+                    'background-color': colors[colorIndex]
+                });
+            }
+        });
+    });
+</script>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+    <input id="io" type="number" placeholder="1st number">
+    <select id="dd">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+
+    </select>
+    <input id="it" type="number" placeholder="2nd number">
+    <button>Try me!</button>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+    $(document).ready(function () {
+        $('button').click(function () {
+            let v1 = $('#io').val();
+            let v2 = $('#it').val();
+            let op = $('#dd').val();
+            if (!v1 || !v2) {
+                return;
+            }
+            if ((op === "/" || op === "%") && v2 == 0) {
+                alert("It's over 9000!");
+                console.log("It's over 9000!");
+
+                return;
+            }
+            if (v1 < 0 || v2 < 0) {
+                alert("Error :(");
+                return;
+            }
+
+            let result = eval(`${v1} ${op} ${v2}`);
+
+            alert(result);
+        });
+
+        setInterval(() => {
+            alert("Please, use me...");
+        }, 30000);
+    });
+</script>
+
+</html>
