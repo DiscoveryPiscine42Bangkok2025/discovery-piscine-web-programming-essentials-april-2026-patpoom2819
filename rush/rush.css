@@ -1,0 +1,50 @@
+/* Ensure the page can actually scroll */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* The core parallax class */
+.parallax {
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    /* Set a specific height for the sections */
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Specific backgrounds for your top and bottom sections */
+.t {
+    background-image: url('https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1350&q=80');
+}
+
+.b {
+    background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1350&q=80');
+}
+
+/* Styling for the text inside the parallax */
+.tc, .td {
+    color: white;
+    font-size: 4rem;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+/* The middle section to provide scrolling distance */
+.black-block {
+    height: 100vh;
+    background-color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+}
