@@ -1,0 +1,278 @@
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background-attachment: fixed;
+   
+}
+.navbar {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    padding: 12px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+}
+.navbar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgb(215, 193, 129), 
+                transparent);
+            transition: left 4s ease;
+        }
+
+        .navbar:hover::before {
+            left: 100%;
+        }
+
+        .navbar:hover {
+            transform: translateY(-2px);
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+section {
+    min-height: auto;
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Introduction {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(15px);
+    border-radius: 24px;
+    margin-top: 50px;
+    padding-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    color: hsl(230, 40%, 80%);
+        color: #484848;
+            font-size: 50px;
+            font-weight: bold;
+            font-family: monospace;
+            letter-spacing: 7px;
+            cursor: pointer
+            
+        }
+ h1 span{
+                transition: .5s linear
+            }
+            h1:hover span:nth-child(1){
+                margin-right: 5px
+            }
+            h1:hover span:nth-child(2){
+                margin-left: 5px
+            }
+            h1:hover span{
+                color: #5c36a8;
+                text-shadow: 0 0 10px #06cfea,
+                            0 0 20px #570af0, 
+                            0 0 40px #aa07f6;
+            }
+
+            
+/* --- BEAUTIFUL CARD STYLING --- */
+.card {
+    position: relative;
+    padding: 30px;
+    border-radius: 24px;
+    color: #ffffff;
+    /* Smooth bouncy transition for hover */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    margin-bottom: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the content beautifully */
+    text-align: center;
+}
+
+/* --- LEVEL 2: ULTRA-PREMIUM AURORA CARDS --- */
+.card {
+    position: relative;
+    padding: 40px 30px;
+    border-radius: 24px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* Extra smooth levitation effect */
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 1. The Animated Glowing Aura (Hidden until hover) */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: -3px; /* Stretches slightly outside the card */
+    border-radius: 26px;
+    background-size: 300%;
+    z-index: -2;
+    filter: blur(20px); /* Creates the soft light glow */
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    animation: auroraGlow 6s linear infinite;
+}
+
+/* 2. The Solid Frosted Glass Base */
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    z-index: -1;
+    backdrop-filter: blur(20px);
+}
+
+/* Hover Physics */
+.card:hover {
+    transform: translateY(-15px) scale(1.02);
+}
+
+.card:hover::before {
+    opacity: 1; /* Turns on the neon glow */
+}
+
+/* --- THEME COLORS (Glowing Magic) --- */
+/* The Purple Card's Glow and Base */
+.purple::before {
+    background: linear-gradient(45deg, #aa07f6, #06cfea, #aa07f6);
+}
+.purple::after {
+    background: linear-gradient(145deg, rgba(42, 27, 61, 0.8), rgba(18, 18, 33, 0.95));
+}
+
+/* The Green Card's Glow and Base */
+.green::before {
+    background: linear-gradient(45deg, #00ff87, #60efff, #00ff87);
+}
+.green::after {
+    background: linear-gradient(145deg, rgba(27, 61, 40, 0.8), rgba(18, 33, 20, 0.95));
+}
+
+/* --- THE ANIMATION KEYFRAMES --- */
+@keyframes auroraGlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* --- REST OF THE INNER ELEMENTS (Keep these looking sharp!) --- */
+.card-number {
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    font-size: 110px;
+    font-weight: 900;
+    opacity: 0.05;
+    font-family: Arial, sans-serif;
+    transition: all 0.5s ease;
+    line-height: 1;
+    z-index: 0;
+}
+
+.card:hover .card-number { 
+    opacity: 0.15; 
+    transform: scale(1.1) translateX(15px);
+    color: #ffffff;
+}
+
+.card img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 20px;
+    transition: all 0.5s ease;
+    z-index: 2;
+}
+
+.card:hover img {
+    border-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.08) rotate(3deg);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.4);
+}
+
+.card h2 {
+    font-size: 28px;
+    margin-bottom: 5px;
+    z-index: 2;
+}
+
+.role {
+    font-size: 13px;
+    color: #cccccc;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+    z-index: 2;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    z-index: 2;
+}
+
+.tags span {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.tags span:hover {
+    background: #ffffff;
+    color: #000000;
+    transform: translateY(-3px);
+}
+
+.arrow-btn {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: rgba(255, 255, 255, 0.05);
+    z-index: 2;
+}
+
+.card:hover .arrow-btn {
+    background-color: #ffffff;
+    color: #000000;
+    transform: translateX(-5px) scale(1.1);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+}

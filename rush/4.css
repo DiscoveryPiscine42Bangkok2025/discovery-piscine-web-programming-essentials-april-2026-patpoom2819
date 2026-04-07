@@ -1,0 +1,259 @@
+body{
+    color: #6F8BA4;
+    margin-top:20px;
+}
+.section {
+    padding: 100px 0;
+    position: relative;
+}
+.gray-bg {
+    background-color: #f5f5f5;
+}
+img {
+    max-width: 100%;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+/* About Me 
+---------------------*/
+.about-text h3 {
+  font-size: 45px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+@media (max-width: 767px) {
+  .about-text h3 {
+    font-size: 35px;
+  }
+}
+.about-text h6 {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+@media (max-width: 767px) {
+  .about-text h6 {
+    font-size: 18px;
+  }
+}
+.about-text p {
+  font-size: 18px;
+  max-width: 450px;
+}
+.about-text p mark {
+  font-weight: 600;
+  color: #20247b;
+}
+
+.about-list {
+  padding-top: 10px;
+}
+.about-list .media {
+  padding: 5px 0;
+}
+.about-list label {
+  color: #20247b;
+  font-weight: 600;
+  width: 88px;
+  margin: 0;
+  position: relative;
+}
+.about-list label:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 11px;
+  width: 1px;
+  height: 12px;
+  background: #20247b;
+  -moz-transform: rotate(15deg);
+  -o-transform: rotate(15deg);
+  -ms-transform: rotate(15deg);
+  -webkit-transform: rotate(15deg);
+  transform: rotate(15deg);
+  margin: auto;
+  opacity: 0.5;
+}
+.about-list p {
+  margin: 0;
+  font-size: 15px;
+}
+
+@media (max-width: 991px) {
+  .about-avatar {
+    margin-top: 30px;
+  }
+}
+
+.about-section .counter {
+  padding: 22px 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+}
+.about-section .counter .count-data {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.about-section .counter .count {
+  font-weight: 700;
+  color: #20247b;
+  margin: 0 0 5px;
+}
+.about-section .counter p {
+  font-weight: 600;
+  margin: 0;
+}
+mark {
+    background-image: linear-gradient(rgba(252, 83, 86, 0.6), rgba(252, 83, 86, 0.6));
+    background-size: 100% 3px;
+    background-repeat: no-repeat;
+    background-position: 0 bottom;
+    background-color: transparent;
+    padding: 0;
+    color: currentColor;
+}
+.theme-color {
+    color: #fc5356;
+}
+.dark-color {
+    color: #20247b;
+}
+
+
+/* จัดวางกลุ่มไอคอน */
+.social-links {
+    display: flex;
+    gap: 15px;
+  }
+  
+  /* สร้างกรอบสี่เหลี่ยมโค้งมนเหมือนในรูป */
+  .social-card {
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 12px; /* ความโค้งของมุม */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 24px;
+    color: #333;
+    border: 1px solid #e0e0e0; /* เส้นขอบบางๆ */
+    transition: all 0.3s ease;
+    position: relative; /* สำหรับจัดวาง Tooltip */
+  }
+  
+  /* เอฟเฟกต์เมื่อเอาเมาส์ไปชี้ (Hover) */
+  .social-card:hover {
+    transform: translateY(-5px); /* ยกตัวขึ้นเล็กน้อย */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  
+  /* ส่วนของชื่อแอป (Tooltip) */
+  .social-card::after {
+    content: attr(data-name); /* ดึงชื่อจาก data-name ใน HTML */
+    position: absolute;
+    bottom: -35px;
+    background: #333;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0; /* ปกติซ่อนไว้ */
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+  
+  .social-card:hover::after {
+    opacity: 1; /* แสดงชื่อเมื่อชี้ */
+  }
+
+
+/* สร้างกล่องหุ้มใหม่เพื่อจัดกลุ่ม Contact ทั้งหมด */
+.centered-contact-section {
+    width: 100%; /* ให้เต็มความกว้าง */
+    max-width: 600px; /* กำหนดความกว้างสูงสุดเพื่อให้จัดกลางได้ (ปรับตามชอบ) */
+    margin: 0 auto; /* สั่งจัดกลางในแนวแกน X */
+    text-align: center; /* จัดตัวหนังสือให้อยู่ตรงกลาง (มีผลกับ Contact header) */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* จัดกลุ่มไอคอนให้อยู่ตรงกลาง */
+    justify-content: center;
+    margin-top: 20px; /* ระยะห่างจากด้านบน */
+  }
+  
+.contact-section {
+    width: 100%;       /* ให้กล่องยาวเต็มหน้าจอ */
+    display: flex;      /* เปิดใช้ Flexbox */
+    flex-direction: column; /* จัดของข้างในเป็นแนวตั้ง */
+    align-items: center;    /* จัดทุกอย่างในกล่อง (รวมถึง h3) ให้อยู่กลางหน้าจอ */
+    justify-content: center;
+    margin-top: 50px;   /* ระยะห่างจากข้อมูลด้านบน */
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.contact-header {
+    text-align: center;
+    width: 100%;
+    color: #20247b;
+}
+
+
+  
+  /* กลุ่มไอคอน (ใช้ CSS Grid เพื่อความสวยงาม) */
+  .social-icons-row {
+    display: flex; /* ใช้ Flexbox */
+    gap: 15px; /* ระยะห่างระหว่างไอคอน */
+    justify-content: center; /* จัดไอคอนทั้งหมดไว้ตรงกลาง */
+    align-items: center;
+  }
+  
+  /* จัดสไตล์ไอคอนแต่ละตัว (เหมือนในคำแนะนำก่อน) */
+  .social-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #f1f1f1; /* สีพื้นหลังอ่อนๆ */
+    border-radius: 8px; /* ความโค้งของมุม */
+    border: 1px solid #ddd; /* เส้นขอบบางๆ */
+    font-size: 1.5em;
+    color: #555;
+    text-decoration: none;
+    position: relative; /* สำหรับ Tooltip */
+    transition: all 0.3s;
+  }
+  
+  /* Hover Effect */
+  .social-icon-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  
+  /* CSS สำหรับ Tooltip (แสดงชื่อเมื่อ Hover) */
+  .social-icon-wrapper[data-name]::after {
+    content: attr(data-name);
+    position: absolute;
+    top: -30px; /* ปรับตำแหน่ง */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0,0,0,0.8);
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  
+  .social-icon-wrapper:hover::after {
+    opacity: 1;
+  }
