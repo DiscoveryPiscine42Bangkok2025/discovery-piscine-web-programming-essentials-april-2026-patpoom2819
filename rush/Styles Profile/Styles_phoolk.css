@@ -1,0 +1,253 @@
+/* --- ปรับแต่งสีพื้นหลังหลัก --- */
+.gray-bg {
+    background-color: #f4f7f9;
+    /* สีเทาอมฟ้าอ่อนๆ ดูหรูหราขึ้น */
+}
+
+.about-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 130px;
+    padding-bottom: 50px;
+}
+
+.dark-color {
+    color: #1a1e5c;
+}
+
+.theme-color {
+    color: #fc5356;
+}
+
+/* คลาสสำหรับทำเอฟเฟกต์ปรากฏขึ้นมาอย่างนุ่มนวล */
+.css-reveal-text {
+    opacity: 0;
+    /* ซ่อนข้อความไว้ก่อน */
+    transform: translateY(20px);
+    /* เลื่อนข้อความลงไปด้านล่างนิดนึง */
+    /* สั่งให้แอนิเมชันทำงาน 1.5 วินาที แบบ ease-out (ตอนจบจะช้าลงให้ดูสมูท) */
+    animation: fadeReveal 1.5s ease-out forwards;
+    animation-delay: 0.5s;
+    /* หน่วงเวลาครึ่งวินาทีก่อนเริ่มแสดง (ปรับได้) */
+}
+
+/* คำสั่งแอนิเมชัน */
+@keyframes fadeReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        /* เลื่อนกลับมาตำแหน่งปกติ */
+    }
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    padding: 12px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+
+}
+
+.navbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+
+}
+
+.navbar:hover::before {
+    left: 100%;
+}
+
+.navbar:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+
+/* --- ไอคอนโซเชียลแบบใหม่ (ปุ่มกลมมีมิติ) --- */
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: #ffffff;
+    color: #1a1e5c;
+    border-radius: 50%;
+    font-size: 20px;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.social-btn:hover {
+    background-color: #1a1e5c;
+    color: #ffffff;
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 20px rgba(26, 30, 92, 0.2);
+}
+
+/* --- ส่วน Certificate (เกียรติบัตร) --- */
+/* --- หน้าที่ 2: Certificates --- */
+.cert-section {
+    min-height: 100vh !important;
+    /* บังคับให้เป็น 1 หน้าจอ */
+    display: block !important;
+    /* บังคับให้จัดเรียงจากบนลงล่างตามปกติ */
+    margin-top: 80px !important;
+    /* 👈 ปรับตัวเลขตรงนี้! ยิ่งน้อยยิ่งชิดขอบบน */
+    padding-bottom: 30px !important;
+}
+
+
+
+
+.cert-card {
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s ease;
+    border: 1px solid #f0f0f0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ลดความสูงของรูปภาพลงมา เพื่อให้ 2 แถว ใส่ในหน้าจอได้พอดีขึ้น */
+.cert-img-wrapper {
+    width: 100%;
+    height: 100%;
+    /* 👈 ปรับจากเดิม 240px เหลือ 180px */
+    overflow: hidden;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: contain;
+    padding: 10px;
+    transition: transform 0.5s ease;
+}
+
+.cert-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    background: #f8f9fa;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.cert-card:hover .cert-img-wrapper img {
+    transform: scale(1.08);
+}
+
+/* ปรับ Padding ด้านในกล่องข้อความให้กระชับขึ้น */
+.cert-body {
+    padding: 15px !important;
+    flex-grow: 1;
+}
+
+/* --- ระบบขยายภาพด้วย CSS ล้วน (ไม่ใช้ JS) --- */
+
+/* ตั้งค่าเริ่มต้นให้กล่องขยายภาพซ่อนอยู่ (display: none) */
+.css-lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    /* พื้นหลังสีดำโปร่งแสง */
+    backdrop-filter: blur(8px);
+    /* ทำพื้นหลังเบลอให้ดูแพง */
+    align-items: center;
+    justify-content: center;
+}
+
+/* หัวใจสำคัญ: เมื่อ URL มี #img1 ต่อท้าย ให้เปลี่ยนเป็นแสดงผล (flex) */
+.css-lightbox:target {
+    display: flex;
+}
+
+/* ปรับขนาดรูปภาพตอนขยายใหญ่ */
+.css-lightbox img {
+    max-width: 90%;
+    max-height: 85vh;
+    /* ไม่ให้สูงเกินหน้าจอ */
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+    /* แอนิเมชันตอนรูปเด้งขึ้นมา */
+    animation: zoomInImage 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* พื้นที่ล่องหน ใช้สำหรับกดคลิกพื้นหลังแล้วปิดรูป */
+.close-lightbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: zoom-out;
+}
+
+/* ปุ่มกากบาทมุมขวาบน */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    text-decoration: none;
+    z-index: 10001;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    color: #fc5356;
+    transform: scale(1.1);
+}
+
+.cert-card>a {
+    display: block;
+    width: 100%
+}
+
+/* คีย์เฟรมแอนิเมชันตอนซูมภาพ */
+@keyframes zoomInImage {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
